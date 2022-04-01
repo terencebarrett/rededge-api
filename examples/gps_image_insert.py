@@ -29,14 +29,15 @@ def create_image_location_file(input_path, output_path, band_count):
             for row in text_reader:
                 date_to_img = re.match('\d{4}.\d{2}.\d{2}', row[0])
                 if date_to_img:
-                    latitude = row[4]
-                    longitude = row[6]
-                    altitude = row[10]
+                    data_list = [data for data in row if data != '']
+                    latitude = data_list[2]
+                    longitude = data_list[3]
+                    altitude = data_list[4]
                     omega = 0  # TODO: Read this when becomes available
                     phi = 0  # TODO: Read this when becomes available
                     kappa = 0  # TODO: Read this when becomes available
-                    accuracy_xy = max([float(row[19]), float(row[22])])
-                    accuracy_z = row[25]
+                    accuracy_xy = max([float(data_list[7]), float(data_list[8])])
+                    accuracy_z = data_list[9]
                     for n in range(1, band_count+1):
                         image = 'IMG_%04d_%d.tif' % (img_counter, n)
                         text_writer.writerow([image, latitude, longitude, altitude,
