@@ -9,8 +9,12 @@ Setup
    - `> conda env create environment.yml`
    - `> conda activate rededge`
      - The activated python environment will now be shown to the left of the cursor: `(rededge) >`
-5. Example run to "associate image files and update event geotag information" - with three options for how to specify Windows paths
-   - `(rededge) > python gps_image_insert.py create-image-location-file --input_path L:\\Temp\\Emlid_Micasense_Integration\\03_ppk-events\\Reach-rover_raw_202203081558_events.pos --output_path L:\\Temp\\Emlid_Micasense_Integration\\04_exif-csv\\pix4d_geolocation_format.csv`
-   - `(rededge) > python gps_image_insert.py create-image-location-file --input_path "L:\Temp\Emlid_Micasense_Integration\03_ppk-events\Reach-rover_raw_202203081558_events.pos" --output_path "L:\Temp\Emlid_Micasense_Integration\04_exif-csv\pix4d_geolocation_format.csv"`
-   - `(rededge) > python gps_image_insert.py create-image-location-file --input_path L:\Temp\Emlid_Micasense_Integration\03_ppk-events\Reach-rover_raw_202203081558_events.pos --output_path L:\Temp\Emlid_Micasense_Integration\04_exif-csv\pix4d_geolocation_format.csv`
-   - Result is a file named `pix4d_geolocation_format.csv` at `L:\Temp\Emlid_Micasense_Integration\04_exif-csv`
+5. Example runs to "associate image files and update event geotag information"
+   - Note: Change the name of the output file if one with that name is already at the output location, so as not to overwrite others' testing
+   - Example 1 - with three options for how to specify Windows paths
+     - `(rededge) > python gps_image_insert.py create-image-location-file --input_path L:\\Temp\\Emlid_Micasense_Integration\\03_ppk-events\\Reach-rover_raw_202203081558_events.pos --output_path L:\\Temp\\Emlid_Micasense_Integration\\04_exif-csv\\pix4d_geolocation_format_test.csv`
+     - `(rededge) > python gps_image_insert.py create-image-location-file --input_path "L:\Temp\Emlid_Micasense_Integration\03_ppk-events\Reach-rover_raw_202203081558_events.pos" --output_path "L:\Temp\Emlid_Micasense_Integration\04_exif-csv\pix4d_geolocation_format_test.csv"`
+     - `(rededge) > python gps_image_insert.py create-image-location-file --input_path L:\Temp\Emlid_Micasense_Integration\03_ppk-events\Reach-rover_raw_202203081558_events.pos --output_path L:\Temp\Emlid_Micasense_Integration\04_exif-csv\pix4d_geolocation_format_test.csv`
+     - Result is a file named `pix4d_geolocation_format_test.csv` at `L:\Temp\Emlid_Micasense_Integration\04_exif-csv`
+   - Example 2
+     - `(rededge) > python gps_image_insert.py create-image-location-file --input_path L:\Temp\Emlid_Micasense_Integration\03_ppk-events\Reach-rover_raw_202203081558_events.pos --output_path L:\Temp\Emlid_Micasense_Integration\04_exif-csv\pix4d_geolocation_format_test.csv`
